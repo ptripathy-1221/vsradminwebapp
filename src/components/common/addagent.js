@@ -81,7 +81,7 @@ const Addagent = ({
   const [validreportmanager, setValidReportManager] = useState(true);
   const [validqueuename, setValidQueuename] = useState(true);
 
-  // useEffect(() => {
+  // useEffect(() => { .
   //   loadagentddL().then((response) => {
   //     setAgentdata(response.data.resultset);
   //   });
