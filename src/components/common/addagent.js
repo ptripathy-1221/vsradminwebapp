@@ -81,21 +81,37 @@ const Addagent = ({
   const [validreportmanager, setValidReportManager] = useState(true);
   const [validqueuename, setValidQueuename] = useState(true);
 
-  useEffect(() => {
-    loadagentddL().then((response) => {
-      setAgentdata(response.data.resultset);
-    });
-    loadlanguageddl().then((response) => {
-      setLanguagedata(response.data.resultset);
-    });
-    setItemSizeSelected(
-      agentdetail?.languagelist
-        ? JSON.parse(agentdetail?.languagelist).map((i) => {
-            return { languageid: i.languageid, languagename: i.languagename };
-          })
-        : []
-    );
-  }, [agentdetail]);
+  // useEffect(() => {
+  //   loadagentddL().then((response) => {
+  //     setAgentdata(response.data.resultset);
+  //   });
+  //   loadlanguageddl().then((response) => {
+  //     setLanguagedata(response.data.resultset);
+  //   });
+  //   setItemSizeSelected(
+  //     agentdetail?.languagelist
+  //       ? JSON.parse(agentdetail?.languagelist).map((i) => {
+  //           return { languageid: i.languageid, languagename: i.languagename };
+  //         })
+  //       : []
+  //   );
+  // }, [agentdetail]);
+useEffect(() => {
+  loadagentddL().then((response) => {
+    setAgentdata(response.data.resultset);
+  });
+  loadlanguageddl().then((response) => {
+    setLanguagedata(response.data.resultset);
+  });
+  setItemSizeSelected(
+    agentdetail?.languagelist
+      ? JSON.parse(agentdetail?.languagelist).map((i) => {
+          return { languageid: i.languageid, languagename: i.languagename };
+        })
+      : []
+  );
+}, [agentdetail, loadagentddL, loadlanguageddl]);
+
 
   const selectedValues = (selectedList, selectedItem) => {
     const list = selectedList.map((i) => {
