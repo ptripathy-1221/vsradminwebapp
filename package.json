@@ -6,6 +6,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@jridgewell/sourcemap-codec": "^1.5.0",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.10.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -32,7 +33,9 @@
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.1",
+    "svgo": "^2.8.0",
     "throttle-debounce": "^5.0.0",
+    "uuid": "^9.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -58,5 +61,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4"
   }
 }
